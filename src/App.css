@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ * Global Styles for the Netflix application 
+ * Using Tailwind, most styling is done via classes. 
+ * This file sets up necessary base overrides and custom component layers.
+ */
+
+body {
+    /* Netflix uses a deep black background */
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* Define common reusable Netflix components using Tailwind @apply */
+@layer components {
+    .netflix-container {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .netflix-btn-primary {
+        /* Standard Netflix Red Button */
+        @apply bg-red-600 text-white py-2 px-6 rounded transition duration-300 ease-in-out font-bold hover:bg-red-700 shadow-md;
+    }
+
+    .netflix-btn-secondary {
+        /* Play/Info button style (dark, translucent) */
+        @apply bg-gray-500 bg-opacity-70 text-white py-2 px-6 rounded transition duration-300 ease-in-out font-semibold hover:bg-opacity-50;
+    }
+
+    .row-title {
+        @apply text-2xl font-bold mb-4 text-white hover:text-gray-300 cursor-pointer transition duration-200;
+    }
+}
